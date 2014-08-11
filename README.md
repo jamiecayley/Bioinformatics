@@ -1,3 +1,0 @@
-Bioinformatics
-==============
-Random bioinformatic projects 
