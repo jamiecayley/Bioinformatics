@@ -13,8 +13,8 @@ var9 <- sapply(mget(var8,org.Hs.egSYMBOL),"[[",1)
 var10 <- var4
 nodes(var10) <- var9
 var11 <- list();
-var11$fillcolor <- makeAttr(var4,"col=635")
-plot(var10, nodeAttrs=var11)
+#var11$fillcolor <- makeAttr(var4,"col=635")
+plot(var10) #, nodeAttrs=var11)
 
 var12 <- system.file("extdata/hsa04115.xml",package="KEGGgraph")
 var13 <- parseKGML2Graph(var12, genesOnly=TRUE)
@@ -28,10 +28,10 @@ var20 <- sapply(mget(var19,org.Hs.egSYMBOL),"[[",1)
 var21 <- var15
 nodes(var10) <- var20
 var22 <- list();
-var22$fillcolor <- makeAttr(var15,"col=635")
-plot(var21, nodeAttrs=var22)
+#var22$fillcolor <- makeAttr(var15,"col=635")
+plot(var21) #, nodeAttrs=var22)
 
 var23 <- intersect(var10, var21)
 var24 <- list();
-var24$fillcolor <- makeAttr(var23, "col=635")
-plot(var23, nodeAttrs=var24)
+#var24$fillcolor <- makeAttr(var23, "col=635")
+plot(var23) #, nodeAttrs=var24)
