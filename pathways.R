@@ -3,7 +3,7 @@ var2 <- parseKGML2Graph(var1, genesOnly=TRUE)
 var3 <- c("hsa:4967",edges(var2)$'hsa:4967')
 var4 <- subKEGGgraph(var3,var2)
 var5 <- sapply(edges(var4), length) > 0
-var6 <- sapply(inEdges(var4), lendth) > 0
+var6 <- sapply(inEdges(var4), length) > 0
 var7 <- var5|var6
 var8 <- translateKEGGID2GeneID(names(var7))
 var9 <- sapply(mget(var8,org.Hs.egSYMBOL),"[[",1)
@@ -18,7 +18,7 @@ var13 <- parseKGML2Graph(var12, genesOnly=TRUE)
 var14 <- c("hsa:11200",edges(var13)$'hsa:11200')
 var15 <- subKEGGgraph(var14,var13)
 var16 <- sapply(edges(var15), length) > 0
-var17 <- sapply(inEdges(var15), lendth) > 0
+var17 <- sapply(inEdges(var15), length) > 0
 var18 <- var16|var17
 var19 <- translateKEGGID2GeneID(names(var7))
 var20 <- sapply(mget(var19,org.Hs.egSYMBOL),"[[",1)
