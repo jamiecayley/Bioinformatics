@@ -1,3 +1,6 @@
+library(org.Hs.eg.db)
+library(KEGGgraph)
+
 var1 <- system.file("extdata/hsa00020.xml",package="KEGGgraph")
 var2 <- parseKGML2Graph(var1, genesOnly=TRUE)
 var3 <- c("hsa:4967",edges(var2)$'hsa:4967')
