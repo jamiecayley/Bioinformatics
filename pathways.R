@@ -5,7 +5,7 @@ library(Rgraphviz)
 retrieveKGML(pathwayid='05014', organism='hsa', destfile='hsa05014')
 retrieveKGML(pathwayid='05010', organism='hsa', destfile='hsa05010')
 
-var1 <- system.file("extdata/hsa05014.xml",package="KEGGgraph",  method="wget")
+var1 <- system.file("extdata/hsa05014.xml",package="KEGGgraph")
 var2 <- parseKGML2Graph(var1, genesOnly=TRUE)
 var3 <- c("hsa:836",edges(var2)$'hsa:836')
 var4 <- subKEGGgraph(var3,var2)
@@ -17,7 +17,7 @@ var9 <- sapply(mget(var8,org.Hs.egSYMBOL),"[[",1)
 var10 <- var4
 nodes(var10) <- var9
 
-var12 <- system.file("extdata/hsa05010.xml",package="KEGGgraph",  method="wget")
+var12 <- system.file("extdata/hsa05010.xml",package="KEGGgraph")
 var13 <- parseKGML2Graph(var12, genesOnly=TRUE)
 var14 <- c("hsa:836",edges(var13)$'hsa:836')
 var15 <- subKEGGgraph(var14,var13)
