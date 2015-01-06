@@ -1,6 +1,7 @@
 library(org.Hs.eg.db)
 library(KEGGgraph)
 library(Rgraphviz)
+library(graph)
 
 var1 <- system.file("extdata/hsa05014.xml",package="KEGGgraph")
 var2 <- parseKGML2Graph(var1, genesOnly=TRUE)
