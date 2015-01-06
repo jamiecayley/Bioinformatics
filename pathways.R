@@ -30,4 +30,4 @@ nodes(var21) <- var20
 var22 <- as.data.frame(get.edgelist(var10))
 var23 <- as.data.frame(get.edgelist(var21))
 var24 <- intersect(var22, var23) 
-plot.data.frame(var24)
+plot(var24)
