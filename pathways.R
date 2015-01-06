@@ -4,7 +4,7 @@ library(Rgraphviz)
 
 var1 <- system.file("extdata/hsa05014.xml",package="KEGGgraph")
 var2 <- parseKGML2Graph(var1, genesOnly=TRUE)
-var3 <- c("hsa:836",edges(var2)$'hsa:836')
+var3 <- c("hsa:842",edges(var2)$'hsa:842')
 var4 <- subKEGGgraph(var3,var2)
 var5 <- sapply(edges(var4), length) > 0
 var6 <- sapply(inEdges(var4), length) > 0
