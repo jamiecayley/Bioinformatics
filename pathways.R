@@ -16,7 +16,7 @@ nodes(var10) <- var9
 
 var12 <- system.file("extdata/hsa05010.xml",package="KEGGgraph")
 var13 <- parseKGML2Graph(var12, genesOnly=TRUE)
-var14 <- c("hsa:836",edges(var13)$'hsa:836')
+var14 <- c("hsa:842",edges(var13)$'hsa:842')
 var15 <- subKEGGgraph(var14,var13)
 var16 <- sapply(edges(var15), length) > 0
 var17 <- sapply(inEdges(var15), length) > 0
