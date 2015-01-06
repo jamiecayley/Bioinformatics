@@ -26,5 +26,7 @@ var20 <- sapply(mget(var19,org.Hs.egSYMBOL),"[[",1)
 var21 <- var15
 nodes(var21) <- var20
 
-var23 <- intersect(var20, var9)
-plot(var23)
+var22 <- as.data.frame(get.edgelist(var10))
+var23 <- as.data.frame(get.edgelist(var21))
+var24 <- intersect(var22, var23) 
+plot.data.frame(var24)
