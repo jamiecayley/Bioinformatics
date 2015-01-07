@@ -2,6 +2,7 @@ library(org.Hs.eg.db)
 library(KEGGgraph)
 library(Rgraphviz)
 library(graph)
+library(igraph)
 
 var1 <- system.file("extdata/hsa05014.xml",package="KEGGgraph")
 var2 <- parseKGML2Graph(var1, genesOnly=TRUE)
@@ -27,7 +28,9 @@ var20 <- sapply(mget(var19,org.Hs.egSYMBOL),"[[",1)
 var21 <- var15
 nodes(var21) <- var20
 
-var22 <- as.data.frame(get.edgelist(var10))
-var23 <- as.data.frame(get.edgelist(var21))
-var24 <- intersect(var22, var23) 
-plot(var24)
+var22 <- igraph.from.graphNEL(var10)
+var23 <- igraph.from.graphNEL(var21)
+var24 <- as.data.frame(get.edgelist(var22))
+var25 <- as.data.frame(get.edgelist(var23))
+var26 <- intersect(var24, var25) 
+plot(var26)
