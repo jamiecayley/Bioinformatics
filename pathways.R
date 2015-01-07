@@ -2,12 +2,17 @@ library(org.Hs.eg.db)
 library(KEGGgraph)
 library(Rgraphviz)
 library(graph)
+
+#to download the XMLs from KEGG use the following 2 lines (need to have wget) 
+retrieveKGML(pathwayid='05014', organism='hsa', destfile='hsa05014')  #ALS pathway
+retrieveKGML(pathwayid='05014', organism='hsa', destfile='hsa05010')  #AD pathway 
+
  
 process.pathway <- function( filename ) {
 	var1 <- filename
  
 	var2 <- parseKGML2Graph(var1, genesOnly=TRUE)
-	var3 <- c("hsa:842",edges(var2)$'hsa:842')
+	var3 <- c("hsa:842",edges(var2)$'hsa:842') #can choose another gene depending on what subset of the network one wants to focus on
 	var4 <- subKEGGgraph(var3,var2)
 	var5 <- sapply(edges(var4), length) > 0
 	var6 <- sapply(inEdges(var4), length) > 0
@@ -30,7 +35,7 @@ var12 <- system.file("extdata/hsa05010.xml",package="KEGGgraph")
 var21 <- process.pathway( var12 )
 print( as.list( .var12.env ) )
  
-library(igraph) 
+library(igraph) #loaded here to not mess up the graphNEL, weird igraph bug
 var10.ig <- igraph.from.graphNEL( var10 )
 var21.ig <- igraph.from.graphNEL( var10 )
 par(mfrow=c(2,2))
@@ -39,4 +44,4 @@ for(g in list(var10, var10.ig, var21, var21.ig) ) {
 }
 var24 <- graph.intersection(var24var10.ig, var21.ig)
 print( V(var24) )
-detach('package:igraph', unload=TRUE) 
+detach('package:igraph', unload=TRUE) #unloaded to not mess up future runs 
