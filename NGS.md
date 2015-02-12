@@ -62,8 +62,8 @@ $java -Xmx[memory]g -jar GenomeAnalysisTK.jar    -R [reference.fasta]    -T Vari
 ###Figuring out how many variants you have
 ```
 #total variants (approximation)
-grep -v -c "#" [yourfile.vcf]
+$grep -v -c "#" [yourfile.vcf]
 #by filter
-grep "filterName" [filtered.vcf] | wc -l
+$grep "filterName" [filtered.vcf] | wc -l
 
 ```
