@@ -62,6 +62,7 @@ $java -Xmx[memory]g -jar GenomeAnalysisTK.jar    -R [reference.fasta]    -T Vari
 ####Method 1: SnpEFF w/ GATK
 ```
 $java -Xmx4G -jar snpEff.jar  -c snpEff.config -v -o gatk hg19 [input.vcf] > [output.snpeff.vcf] 
+#sample output http://materechm.github.io/Bioinformatics/snpEFF_summary.html (plus a vcf)
 $java -Xmx4g -jar GenomeAnalysisTK.jar -T VariantAnnotator -R [ref.fasta] -A SnpEff --variant [input.vcf (same input than the last algorithm)] --snpEffFile [input.snpeff.vcf] -L [input.vcf] -o [input.gatk.vcf] 
 ```
 
