@@ -1,5 +1,5 @@
 ##Set-up: 
-Install/download samtools (1.2), bwa, picard (sourceforge version), and GATK + Java 7
+Install/download samtools (1.2), bwa, picard (sourceforge version), GATK + Java 7, Ensembl VEP, and SnpEFF
 You'll need a computer that can run UNIX and over 50 GB of hard disk space (+ a fast internet connection makes things way better)
 Note: for downloading files from broad use the following 
 ```
@@ -64,6 +64,13 @@ $java -Xmx[memory]g -jar GenomeAnalysisTK.jar    -R [reference.fasta]    -T Vari
 $java -Xmx4G -jar snpEff.jar  -c snpEff.config -v -o gatk hg19 [input.vcf] > [output.snpeff.vcf] 
 #sample output http://materechm.github.io/Bioinformatics/snpEFF_summary.html (plus a vcf)
 $java -Xmx4g -jar GenomeAnalysisTK.jar -T VariantAnnotator -R [ref.fasta] -A SnpEff --variant [input.vcf (same input than the last algorithm)] --snpEffFile [input.snpeff.vcf] -L [input.vcf] -o [input.gatk.vcf] 
+```
+####Method 2: Ensembl VEP
+```
+#go to the directory where you have VEP, cd to scripts/variant_effect_predictor/
+$perl INSTALL.pl
+#when it asks if you want to create the .vep folder and download cached files put y, download homo_sapiens_vep_78_GRCh38.tar.gz
+
 ```
 
 ###Figuring out how many variants you have
