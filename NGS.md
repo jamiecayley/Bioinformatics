@@ -58,6 +58,17 @@ $java -Xmx[memory]g -jar GenomeAnalysisTK.jar    -R [reference.fasta]    -T Vari
 #creating an additional filter for variants that don't even meet the low criterium 
 $java -Xmx[memory]g -jar GenomeAnalysisTK.jar    -R [reference.fasta]    -T VariantFiltration    -o [output.vcf] --variant [input.vcf]    --filterExpression "DP < 10" --filterName "PASS"
 ```
+###Torubleshooting 
+If you can't run variant annotator because the variant contigs are not the same as the reference contigs run the following (with picard 1.121 or greater)
+```
+$java -Xmx2g -jar picard.jar SortVcf INPUT=[input.vcf] OUTPUT=[output.vcf] SEQUENCE_DICTIONARY=[reference.fasta]
+```
+Then you might have to edit the output vcf and remove the #contigs from the header. You can do this from the terminal using vim
+```
+$vim [filename]
+#to quit and save use Esc+shift, Shift+Z, Shift+Z
+```
+
 ###Functional predictions 
 ####Method 1: SnpEFF w/ GATK
 ```
