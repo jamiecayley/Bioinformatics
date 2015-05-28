@@ -43,7 +43,7 @@ class MonogenicDiseaseManager:
 
 def main():
     fileName = "/Users/mtchavez/Documents/ALS/Diseasome/GWAS.txt" #location of GWAS catalog in computer
-    path = "/users/mtchavez/Documents/monogenicDiseases.txt" #location where you want to store gml file
+    path = "/users/mtchavez/Documents/monogenicDiseases.txt" #location where you want to store file
     mdm = MonogenicDiseaseManager(fileName, path)
     mdm.load_data_from_csv()
     mdm.write_data_to_csv()
