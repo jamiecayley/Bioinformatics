@@ -269,7 +269,7 @@ def create_spreadsheet(humanSequence, mouseSequence, zebrafishSequence, drosophi
        if oAA == mAA == zAA == dAA == cAA == yAA:
            fullyConservedMutations += 1
        row += 1
-   for mutation in pathogenic_mutations or mutation in benign_mutations:
+   for mutation in pathogenic_mutations:
        oAA = mutation[0]
        pos = int(mutation[1:-1])
        mAA = mouseSequence[pos-1]
